@@ -50,9 +50,9 @@ stage('Dependency Check') {
 steps {
 
 dependencyCheck(
-odcInstallation: 'dependency-check',
-additionalArguments: '--scan .',
-stopBuild: false
+odcInstallation:'dependency-check',
+additionalArguments:'--scan . --data /var/lib/jenkins/odc-data',
+stopBuild:false
 )
 
 }
