@@ -76,7 +76,6 @@ stage('Docker Push') {
 steps {
 
 withCredentials([
-
 usernamePassword(
 credentialsId:'dockerhub',
 usernameVariable:'USER',
@@ -86,9 +85,11 @@ passwordVariable:'PASS'
 ]) {
 
 sh '''
-echo $PASS | docker login \
--u $USER \
---password-stdin
+docker logout || true
+
+docker login \
+-u "$USER" \
+-p "$PASS"
 
 docker push $DOCKER_IMAGE
 '''
@@ -98,7 +99,6 @@ docker push $DOCKER_IMAGE
 }
 
 }
-
 }
 
 }
