@@ -50,8 +50,9 @@ stage('Dependency Check') {
 steps {
 
 dependencyCheck(
-odcInstallation:'dependency-check',
-additionalArguments:'--scan .'
+odcInstallation: 'dependency-check',
+additionalArguments: '--scan .',
+stopBuild: false
 )
 
 }
