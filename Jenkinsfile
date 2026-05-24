@@ -4,7 +4,7 @@ agent any
 
 environment {
 
-DOCKER_IMAGE='LakshmiPriyaYadav/poc1'
+DOCKER_IMAGE='lakshmipriyayadav/poc1'
 
 }
 
